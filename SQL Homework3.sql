@@ -64,4 +64,9 @@ select r.Roomname,g.GroupId from group_s g inner join Grouproom gr
 on g.GroupId = gr.GroupId right join Rooms r
 on gr.RoomId=r.RoomId
 ;
-
+select u.User_Name,gr.Groupname,r.RoomName from users u inner join User_group ug
+on u.User_Id = ug.User_Id inner join group_s gr 
+on ug.GroupId = gr.GroupId inner join GroupRoom Go
+on gr.GroupId = Go.GroupId inner join rooms r 
+on Go.RoomId = r.RoomId 
+order by User_Name,Groupname,RoomName;
